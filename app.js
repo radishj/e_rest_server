@@ -1,17 +1,18 @@
 var express = require("express");
 var bodyParser = require("body-parser");
-var couchbase = require("couchbase");
-
+//var couchbase = require("couchbase");
+var cors = require('cors')
 var app = express();
+app.use(cors());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended:true}));
-
+/*
 var cluster = new couchbase.Cluster("couchbase://localhost", {
     username: 'admin',
     password: 'asdfaf'});
 var bucket = cluster.bucket('rest');
 module.exports.bucket = bucket;
-module.exports.cluster = cluster;
+module.exports.cluster = cluster;*/
 var routes = require("./routes.js")(app);
 /*
 var qs = "SELECT * FROM rest where 1";
@@ -27,6 +28,6 @@ let result = coll.query(qs, function(error, result){
 let rows = result.rows;
 */
 
-var server = app.listen(3001, function(){
+var server = app.listen(3070, function(){
     console.log("Listening on port %s...", server.address().port);
 })

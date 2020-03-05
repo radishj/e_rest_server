@@ -10,6 +10,10 @@ url: /item
             description: string,
             options: [string(,string...)]
         }
-    desc: Create an item
+    desc: Create 
 
-    
+cbimport json -c couchbase://127.0.0.1:8091 -u admin -p asdfaf -b rest -d file://dest.json -f lines -g key::%type%::%id% -t 4
+
+select * from rest where type='merchants' and address.city='Chapel Hill'
+
+select  DATE_PART_MILLIS(createDate._seconds*1000, 'month') as month, count(`role`) as count from rest where `role` = 'customer' group by month;

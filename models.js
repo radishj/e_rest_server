@@ -1,9 +1,28 @@
-var uuid = require("uuid");
-var bucket = require("./app.js").bucket;
-var cluster = require("./app.js").cluster;
-var coll = bucket.defaultCollection();
-function CategoryModel(){};
+var couchbase = require('./node_modules/ottoman/node_modules/couchbase');
+var ottoman = require('ottoman');
 
+var cluster = new couchbase.Cluster('couchbase://127.0.0.1');
+cluster.authenticate('admin', 'asdfaf');
+ottoman.bucket = cluster.openBucket('rest');
+
+var ItemMdl = ottoman.model('Item', { 
+    name: {type:'string', readonly: true },
+    description: 'string',
+    options: ['string']
+},{
+    id: 'name',
+    index: {
+        findByName:{
+            by: 'name',
+            bype: 'n1ql'
+        }
+    }
+})
+
+ItemMdl.createAndSave = function (item, done) {
+    this.create(item, done);
+}
+/*
 function ItemModel(){};
 ItemModel.getAll = async function(callback){
     var statement = "SELECT * FROM " + bucket._name + " WHERE type='item'";
@@ -28,7 +47,7 @@ ItemModel.getAll = async function(callback){
             return callback(error, null);
         }
         return callback(null,result);
-    })*/
+    })
 }
 
 ItemModel.save = function(data, callback){
@@ -58,3 +77,5 @@ ItemModel.save = function(data, callback){
 
 module.exports.CategoryModel = CategoryModel;
 module.exports.ItemModel = ItemModel;
+*/
+module.exports.Item = ItemMdl;
