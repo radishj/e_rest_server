@@ -10,6 +10,9 @@ var sys = {
     name : 'steven',
     merchants: {
         "8K4TVlYVjKqlRdMWEwi2": {
+            "distance": "6.6 miles",
+            "rate": "4.6 ****",
+            "discount": "10% Loyalty",
             "name": "Cafe Meridian & Catering Company",
             "prepayment": { "credit": 490.2, "saving": 400 },
             "createdAt": { "_seconds": 1557551045, "_nanoseconds": 17000000 },
@@ -193,6 +196,9 @@ var sys = {
             }
         },
         "3eRdOFW61umnHOzTcnDt": {
+          "distance": "6.6 miles",
+          "rate": "4.6 ****",
+          "discount": "10% Loyalty",
           "sort": 1000,
           "starRatingCount": 44,
           "status": "HIDDEN",
@@ -231,6 +237,9 @@ var sys = {
           }
         },
         "6bOm3ERsx9ihmuBJ7T9m": {
+            "distance": "6.6 miles",
+            "rate": "4.6 ****",
+            "discount": "10% Loyalty",
             "sort": 1000,
             "starRatingCount": 636,
             "status": "HIDDEN",
@@ -271,6 +280,7 @@ var sys = {
     }
 }
 var appRouter = function(app){
+    console.log("111111111111");
     app.get("/category", function(req, res){
 
     });
