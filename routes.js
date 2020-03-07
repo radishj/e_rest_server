@@ -280,7 +280,6 @@ var sys = {
     }
 }
 var appRouter = function(app){
-    console.log("111111111111");
     app.get("/category", function(req, res){
 
     });

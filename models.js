@@ -1,4 +1,4 @@
-var couchbase = require('./node_modules/ottoman/node_modules/couchbase');
+/*var couchbase = require('./node_modules/ottoman/node_modules/couchbase');
 var ottoman = require('ottoman');
 
 var cluster = new couchbase.Cluster('couchbase://127.0.0.1');
@@ -22,7 +22,7 @@ var ItemMdl = ottoman.model('Item', {
 ItemMdl.createAndSave = function (item, done) {
     this.create(item, done);
 }
-/*
+
 function ItemModel(){};
 ItemModel.getAll = async function(callback){
     var statement = "SELECT * FROM " + bucket._name + " WHERE type='item'";
@@ -77,5 +77,6 @@ ItemModel.save = function(data, callback){
 
 module.exports.CategoryModel = CategoryModel;
 module.exports.ItemModel = ItemModel;
-*/
+
 module.exports.Item = ItemMdl;
+*/
