@@ -8,6 +8,53 @@ var jsonParser = bodyParser.json();
 var sys = {
     phone : '7783502200',
     name : 'steven',
+    stations: {
+      "1":{
+        "name": "Frontier RTP 800 dining area",
+        "address": {
+          "city": "Research Triangle",
+          "state": "NC",
+          "country": "US",
+          "street1": "800 Park Offices Dr",
+          "location": { "longitude": 0, "latitude": 0 },
+          "zip": "27709"
+        },
+        "orderStartTime": "5:00pm",
+        "orderEndTime": "10:45am",
+        "deliveryStartTime": "11:30am",
+        "deliveryEndTime": "12:00pm"
+      },
+      "2":{
+        "name": "Building 4819 first floor",
+        "address": {
+          "city": "Durham",
+          "state": "NC",
+          "country": "US",
+          "street1": "4819 Emperor Blvd",
+          "location": { "longitude": 0, "latitude": 0 },
+          "zip": "27703"
+        },
+        "orderStartTime": "5:00pm",
+        "orderEndTime": "10:45am",
+        "deliveryStartTime": "11:45am",
+        "deliveryEndTime": "12:15pm"
+      },
+      "3":{
+        "name": "SolarWinds front desk",
+        "address": {
+          "city": "Morrisville",
+          "state": "NC",
+          "country": "US",
+          "street1": "3030 Slater Rd",
+          "location": { "longitude": 0, "latitude": 0 },
+          "zip": "27560"
+        },
+        "orderStartTime": "5:00pm",
+        "orderEndTime": "10:45am",
+        "deliveryStartTime": "12:00am",
+        "deliveryEndTime": "12:30pm"
+      }
+    },
     merchants: {
         "8K4TVlYVjKqlRdMWEwi2": {
             "distance": "6.6 miles",
@@ -55,7 +102,7 @@ var sys = {
                   "avZEKgJGJXTGFydabaGf": {
                     "visiable": true,
                     "name": "Today's Specials for lunch",
-                    "description": "",
+                    "description": "Delicious chef pick",
                     "products": {
                       "4v3FcZl9PXMO36d6JGUg": {
                         "photoUrl": "https://firebasestorage.googleapis.com/v0/b/easyeat-ef6db.appspot.com/o/menu%2Fcafe%20meridian%2FDSCN0888e.jpg?alt=media&token=24848d4f-49d7-4ab9-afab-d52e37b7370c",
