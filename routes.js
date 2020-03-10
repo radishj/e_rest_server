@@ -118,7 +118,44 @@ var sys = {
                         "salesVolume30Days": 30,
                         "options": [
                           {
-                            "sides": [
+                            "name": "Salads",
+                            "description": "Choose a salad (1 Required)",
+                            "maxCount": 1,
+                            "minCount": 1,
+                            "items": [
+                              { "name": "Tabbouleh Salad", "maxCount": 1, "minCount": 0, "price": 2.99 },
+                              { "name": "Fattoush Salad", "maxCount": 1, "minCount": 0, "price": 1.99 },
+                              { "name": "Greek Salad", "maxCount": 1, "minCount": 0, "price": 1.99 },
+                            ]
+                          },
+                          {
+                            "name": "sides",
+                            "description": "Add A Soup or Turkey Chili (max 2)",
+                            "minCount": 0,
+                            "maxCount": 2,
+                            "items": [
+                              { "name": "8 oz Soup", "maxCount": 1, "minCount": 0, "price": 2.69 },
+                              { "name": "12 oz Soup", "maxCount": 1, "minCount": 0, "price": 3.49 },
+                              {
+                                "name": "Turkey Chili Cup",
+                                "maxCount": 1,
+                                "minCount": 0,
+                                "price": 3.49
+                              },
+                              {
+                                "name": "Turkey Chili Bowl",
+                                "maxCount": 1,
+                                "minCount": 0,
+                                "price": 3.49
+                              }
+                            ]
+                          },
+                          {
+                            "name": "sides",
+                            "description": "Choose Two Sides (1 or 2)",
+                            "maxCount": 2,
+                            "minCount": 1,  
+                            "items": [
                               { "maxCount": 1, "minCount": 0, "price": 0, "name": "Caesar Salad" },
                               { "name": "Rice Pilaf", "maxCount": 1, "minCount": 0, "price": 0 },
                               { "price": 0, "name": "Kale Salad", "maxCount": 1, "minCount": 0 },
@@ -139,49 +176,53 @@ var sys = {
                                 "price": 0
                               },
                               { "name": "Greek Salad", "maxCount": 1, "minCount": 0, "price": 0 }
-                            ],
-                            "name": "Choose Two Sides (1 - 2) Required",
-                            "maxCount": 2,
-                            "minCount": 1
-                          },
-                          {
-                            "sides": [
-                              { "name": "8 oz Soup", "maxCount": 1, "minCount": 0, "price": 2.69 },
-                              { "name": "12 oz Soup", "maxCount": 1, "minCount": 0, "price": 3.49 },
-                              {
-                                "name": "Turkey Chili Cup",
-                                "maxCount": 1,
-                                "minCount": 0,
-                                "price": 3.49
-                              },
-                              {
-                                "name": "Turkey Chili Bowl",
-                                "maxCount": 1,
-                                "minCount": 0,
-                                "price": 4.49
-                              }
-                            ],
-                            "name": "Add A Soup or Turkey Chili",
-                            "maxCount": 2
+                            ]
                           }
                         ]
                       },
                       "wQiV6RGrhzurOYFYxcQM": {
                         "options": [
                           {
+                            "name": "Extra Tzatziki",
+                            "minCount": 0,
                             "maxCount": 1,
-                            "sides": [
+                            "items": [
                               {
                                 "name": "Add Additional Tzatziki",
                                 "maxCount": 1,
                                 "minCount": 0,
                                 "price": 0.59
                               }
-                            ],
-                            "name": "Extra Tzatziki"
+                            ]
                           },
                           {
-                            "sides": [
+                            "name": "sides",
+                            "description": "Add A Soup or Turkey Chili",
+                            "maxCount": 2,
+                            "minCount": 0,
+                            "items": [
+                              { "name": "8 oz Soup", "maxCount": 1, "minCount": 0, "price": 2.69 },
+                              { "name": "12 oz Soup", "maxCount": 1, "minCount": 0, "price": 3.49 },
+                              {
+                                "price": 3.49,
+                                "name": "Turkey Chili Cup",
+                                "maxCount": 1,
+                                "minCount": 0
+                              },
+                              {
+                                "maxCount": 1,
+                                "minCount": 0,
+                                "price": 4.49,
+                                "name": "Turkey Chili Bowl"
+                              }
+                            ],
+                          },
+                          {
+                            "name": "sides",
+                            "description": "Choose Two Sides (1 - 2) Required",
+                            "maxCount": 2,
+                            "minCount": 1,
+                            "items": [
                               { "name": "Caesar Salad", "maxCount": 1, "minCount": 0, "price": 0 },
                               { "name": "Rice Pilaf", "maxCount": 1, "minCount": 0, "price": 0 },
                               { "name": "Kale Salad", "maxCount": 1, "minCount": 0, "price": 0 },
@@ -203,29 +244,6 @@ var sys = {
                               },
                               { "price": 0, "name": "Greek Salad", "maxCount": 1, "minCount": 0 }
                             ],
-                            "name": "Choose Two Sides (1 - 2) Required",
-                            "maxCount": 2,
-                            "minCount": 1
-                          },
-                          {
-                            "sides": [
-                              { "name": "8 oz Soup", "maxCount": 1, "minCount": 0, "price": 2.69 },
-                              { "name": "12 oz Soup", "maxCount": 1, "minCount": 0, "price": 3.49 },
-                              {
-                                "price": 3.49,
-                                "name": "Turkey Chili Cup",
-                                "maxCount": 1,
-                                "minCount": 0
-                              },
-                              {
-                                "maxCount": 1,
-                                "minCount": 0,
-                                "price": 4.49,
-                                "name": "Turkey Chili Bowl"
-                              }
-                            ],
-                            "name": "Add A Soup or Turkey Chili",
-                            "maxCount": 2
                           }
                         ],
                         "photoUrl": "https://firebasestorage.googleapis.com/v0/b/easyeat-ef6db.appspot.com/o/menu%2Fcafe%20meridian%2FP1010250.jpg?alt=media&token=39d92e44-dea0-4b3d-8a37-a9c093b709d1",
