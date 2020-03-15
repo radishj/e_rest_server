@@ -8,6 +8,14 @@ var jsonParser = bodyParser.json();
 var sys = {
     phone : '7783502200',
     name : 'steven',
+    cards: [
+      {
+        number:3682,       
+      },
+      {
+        number:8916,       
+      }
+    ],
     stations: {
       "1":{
         "name": "Frontier RTP 800 dining area",
@@ -22,6 +30,7 @@ var sys = {
         "orderStartTime": "5:00pm",
         "orderEndTime": "10:45am",
         "deliveryStartTime": "11:30am",
+        
         "deliveryEndTime": "12:00pm"
       },
       "2":{
