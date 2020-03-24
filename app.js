@@ -28,6 +28,6 @@ let result = coll.query(qs, function(error, result){
 let rows = result.rows;
 */
 
-var server = app.listen(3070, function(){
+var server = app.listen(3060, function(){
     console.log("Listening on port %s...", server.address().port);
 })
