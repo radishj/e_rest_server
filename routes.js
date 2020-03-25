@@ -10,12 +10,15 @@ const fs = require('fs');
 let rawdata = fs.readFileSync('data/sysData.json');
 let sys = JSON.parse(rawdata);
 rawdata = fs.readFileSync('data/tasti-02-26-2020.json');
-let tasti = JSON.parse(rawdata);
-delete tasti.users;
-Object.values(tasti.merchants).forEach(rest => {
-  delete rest.orders;
-});
-
+var tasti={};
+function dataClear(){
+  tasti = JSON.parse(rawdata);
+  delete tasti.users;
+  Object.values(tasti.merchants).forEach(rest => {
+    delete rest.orders;
+  });
+}
+dataClear();
 var appRouter = function(app){
   app.get("/category", function(req, res){
 
@@ -104,6 +107,23 @@ var appRouter = function(app){
         res.send('{"msg":"login & password not matching."}');
     }
   });
+  app.post("/tasti-reboot", async function(req, res){
+    var data = req.body;
+    console.log('Get /tasti-reboot,' + JSON.stringify(data));
+    users = Object.values(tasti.logins);
+    var returnData={status:'false'};
+    var findUser=false;
+    for(var user of users){
+      if(user.token == data.token){
+        dataClear();
+        returnData.status='success';
+        break;
+      }
+    }
+    res.send(returnData);
+  });
+  
+
   app.post("/tasti-request", async function(req, res){
     var data = req.body;
     console.log('Get /tasti-request,' + JSON.stringify(data));
