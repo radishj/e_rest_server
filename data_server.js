@@ -9,8 +9,9 @@ const options = {
 var express = require("express");
 var bodyParser = require("body-parser");
 //var couchbase = require("couchbase");
-//var cors = require('cors')
+var cors = require('cors')
 var app = express();
+app.use(cors());
 app.use(helmet());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended:true}));
