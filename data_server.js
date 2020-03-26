@@ -1,6 +1,15 @@
+const https = require("https");
+const fs = require("fs");
+const helmet = require("helmet");
+const options = {
+    key: fs.readFileSync("/etc/letsencrypt/live/www.mediavictoria.com/privkey.pem"),
+    cert: fs.readFileSync("/etc/letsencrypt/live/www.mediavictoria.com/fullchain.pem"),
+    dhparam: fs.readFileSync("/etc/letsencrypt/live/www.mediavictoria.com/dh-strong.pem")
+  };
 var express = require("express");
 var bodyParser = require("body-parser");
 //var couchbase = require("couchbase");
+app.use(helmet());
 var cors = require('cors')
 var app = express();
 app.use(function(req, res, next) {
@@ -33,4 +42,6 @@ let rows = result.rows;
 */
 
 var server = app.listen(process.env.PORT || 3060);
-console.log("Listening on port %s...", server.address().port);
+https.createServer(options, app).listen(3300);
+console.log("Listening on port 3300");
+//console.log("Listening on port %s...", server.address().port);
