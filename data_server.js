@@ -32,5 +32,5 @@ let result = coll.query(qs, function(error, result){
 let rows = result.rows;
 */
 
-var server = app.listen();
+var server = app.listen(process.env.PORT || 3060);
 console.log("Listening on port %s...", server.address().port);
